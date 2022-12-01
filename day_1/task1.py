@@ -4,23 +4,18 @@ def main(file):
     with open(file) as f:
         lines = f.readlines()
 
-        food = []
+        food = 0
         for line in lines:
             if line.strip():
-                food.append(int(line))
+                food += int(line)
             else:
                 foods.append(food)
-                food = []
-    
-    max = 0
-    for food in foods:
-        tmp = sum(food)
-        if tmp > max:
-            max = tmp
-    
-    print(max)
+                food = 0
 
+        foods.append(food)
+
+    print(max(foods))
     return
 
 if __name__ == "__main__":
-    main("data.txt")
+    main("test.txt")

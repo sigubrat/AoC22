@@ -3,24 +3,19 @@ def main(file):
     with open(file) as f:
         lines = f.readlines()
 
-        food = []
+        food = 0
         for line in lines:
             if line.strip():
-                food.append(int(line))
+                food += int(line)
             else:
                 foods.append(food)
-                food = []
+                food = 0
+
         foods.append(food)
-
-    maxFoods = []
-    foods = [sum(i) for i in foods]
-    for i in range(3):
-        maxFoods.append(max(foods))
-        foods.remove(max(foods))
     
-    print(sum(maxFoods))
-
+    maxFoods = sorted(foods)[-3:]
+    print(maxFoods)
     return
 
 if __name__ == "__main__":
-    main("data.txt")
+    main("test.txt")

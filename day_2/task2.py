@@ -12,10 +12,10 @@ with open("data.txt", "r") as f:
     data = [i.split() for i in raw]
 
     total_score = 0
-    for round in data:
+    for r in data:
         score = 0
-        elf = round[0]
-        you = round[1]
+        elf = r[0]
+        you = r[1]
 
         score += need[you]
         shapes = combos[elf]

@@ -5,7 +5,7 @@ with open("data.txt", "r") as f:
         A, B = line[0], line[1].strip()
         A, B = A.split("-"), B.split("-")
         
-        if (int(A[0]) < int(B[0]) and int(A[1]) < int(B[0])) or (int(A[0]) > int(B[1])):
+        if int(B[0]) > int(A[1]) or int(A[0]) > int(B[1]):
             continue
         counter+= 1
 

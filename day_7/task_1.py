@@ -17,9 +17,6 @@ with open("day_7/data.txt", "r") as f:
             else:
                 values[key] += size
 
-    def handle_read(data):
-        update_values(int(data[0]))
-
     for line in lines:
         output = line.strip().split()
         if output[0] == "dir" or output[1] == "ls":

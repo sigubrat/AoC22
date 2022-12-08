@@ -1,22 +1,20 @@
-
 def main(file):
-    foods = []
+    max_food = 0
     with open(file) as f:
-        lines = f.readlines()
-
         food = 0
-        for line in lines:
-            if line.strip():
+        for line in f:
+            line = line.strip()
+            if line:
                 food += int(line)
             else:
-                foods.append(food)
+                max_food = max(max_food, food)
                 food = 0
 
-        foods.append(food)
+        max_food = max(max_food, food)
 
-    print(max(foods))
-    return
+    print(max_food)
+
 
 if __name__ == "__main__":
     # Change to test.txt if you want to run the test first
-    main("data.txt")
+    main("day_1/data.txt")

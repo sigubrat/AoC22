@@ -19,4 +19,4 @@ def main(file):
 
 if __name__ == "__main__":
     # Change to test.txt if you want to run the test first
-    main("data.txt")
+    main("day_01/data.txt")
